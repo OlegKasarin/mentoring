@@ -9,7 +9,7 @@
 #import "NewVC.h"
 
 @interface NewVC ()
-
+@property (readonly, nonatomic) NSInteger currentCountOfRotation;
 @end
 
 @implementation NewVC
@@ -22,6 +22,40 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    _currentCountOfRotation++;
+    self.currentCountOfRotationsLabel.text = [NSString stringWithFormat:@"Count: %d", _currentCountOfRotation];
+    NSString* orientation;
+    switch (self.interfaceOrientation) {
+        case 1:
+        {
+            orientation = @"Orientation Portrait";
+            break;
+        }
+        case 2:
+        {
+            orientation = @"Orientation Portrait Upside Down";
+            break;
+        }
+        case 3:
+        {
+            orientation = @"Orientation Landscape Right";
+            break;
+        }
+        case 4:
+        {
+            orientation = @"Orientation Landscape Left";
+            break;
+        }
+        default:
+        {
+            orientation = @"Orientation Unknown";
+            break;
+        }
+    }
+    self.currentOrientationLabel.text = orientation;
 }
 
 /*
