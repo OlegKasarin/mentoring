@@ -86,7 +86,7 @@
 }
 
 - (NSString *)description {
-        return [NSString stringWithFormat:@"%@ %@ %d", [self carBrandString], _modelName, _generationNumber];
+        return [NSString stringWithFormat:@"%@ %@ %ld", [self carBrandString], _modelName, _generationNumber];
 }
 
 - (nonnull NSString*)randomSerialNumber {

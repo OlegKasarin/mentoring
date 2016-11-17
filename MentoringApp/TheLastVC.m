@@ -33,8 +33,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender {
     if ([segue.identifier isEqualToString:@"segueToVC"]) {
         OrangeVC* destVC = segue.destinationViewController;
-        destVC.titleLabel.text = [NSString stringWithFormat:@"Counts: %ld", (long)_rotationCount];
-        destVC.view.backgroundColor = [UIColor blueColor];
+        
+        destVC.color = [UIColor blueColor];
+        destVC.counter = _rotationCount;        
     }
 }
 
@@ -43,7 +44,7 @@
 - (IBAction)greenBtn:(UIButton *)sender {
     OrangeVC* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"OrangeVC"];
     [self presentViewController:vc animated:YES completion:^{
-        vc.titleLabel.text = [NSString stringWithFormat:@"Counts: %ld", (long)_rotationCount];
+        vc.counter = _rotationCount;
     }];
 }
 

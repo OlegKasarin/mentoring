@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CarsTableViewController : UITableViewController
+@class CarModel;
 
+@interface CarsTableViewController : UITableViewController
+@property (copy, nonatomic, nullable) NSArray <CarModel*> *carList;
 @end

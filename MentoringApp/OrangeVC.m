@@ -9,6 +9,7 @@
 #import "OrangeVC.h"
 
 @interface OrangeVC ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -16,6 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = self.color;
+    self.titleLabel.text = [NSString stringWithFormat:@"Counts: %ld", (long)self.counter];
     // Do any additional setup after loading the view.
 }
 

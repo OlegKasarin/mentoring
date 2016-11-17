@@ -8,6 +8,10 @@
 
 #import "CarCell.h"
 
+@interface CarCell ()
+@property (weak, nonatomic) IBOutlet UILabel *carLabel;
+@end
+
 @implementation CarCell
 
 - (void)awakeFromNib {

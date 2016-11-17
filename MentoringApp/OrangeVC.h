@@ -10,6 +10,7 @@
 
 @interface OrangeVC : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (nonatomic) NSInteger counter;
+@property (nonatomic) UIColor* color;
 
 @end

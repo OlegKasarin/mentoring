@@ -9,6 +9,8 @@
 #import "NewVC.h"
 
 @interface NewVC ()
+@property (weak, nonatomic) IBOutlet UILabel *currentOrientationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentCountOfRotationsLabel;
 @property (readonly, nonatomic) NSInteger currentCountOfRotation;
 @end
 
@@ -26,7 +28,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     _currentCountOfRotation++;
-    self.currentCountOfRotationsLabel.text = [NSString stringWithFormat:@"Count: %d", _currentCountOfRotation];
+    self.currentCountOfRotationsLabel.text = [NSString stringWithFormat:@"Count: %ld", _currentCountOfRotation];
     NSString* orientation;
     switch (self.interfaceOrientation) {
         case 1:

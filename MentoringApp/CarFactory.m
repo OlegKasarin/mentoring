@@ -126,7 +126,7 @@ NO - список выпускаемых моделей
     for (NSMutableDictionary* currentDict in _modelsDict) {
         if ([[currentDict objectForKey:@"model"] isEqualToModel:carModel]) {
             count+= [[currentDict objectForKey:@"count"] integerValue];
-            [currentDict setObject:[NSNumber numberWithInt:count] forKey:@"count"];
+            [currentDict setObject:[NSNumber numberWithInteger:count] forKey:@"count"];
             return YES;
         }
     }

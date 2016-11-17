@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MentoringApp/Base.lproj/Main.storyboard">
+   </FileRef>
+   <FileRef
       location = "group:MentoringApp.xcodeproj">
    </FileRef>
    <FileRef

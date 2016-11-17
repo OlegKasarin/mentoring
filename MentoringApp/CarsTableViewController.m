@@ -8,6 +8,8 @@
 
 #import "CarsTableViewController.h"
 #import "CarCell.h"
+#import "CarInfoViewController.h"
+#import "CarModel.h"
 
 @interface CarsTableViewController ()
 
@@ -33,68 +35,40 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 5;
+    return [self.carList count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CarCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CarCell" forIndexPath:indexPath];
-    
-    
-    cell.carLabel.text = [NSString stringWithFormat:@"CAR %d", indexPath.row];
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", self.carList[indexPath.row]];
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSLog(@"Selected cell is '%@'", self.carList[indexPath.row]);
+    CarInfoViewController* carInfoVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CarInfoViewController"];
+    carInfoVC.selectedCarModel = self.carList[indexPath.row];
+    [self.navigationController pushViewController:carInfoVC animated:YES];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+ 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender NS_AVAILABLE_IOS(5_0) {
+    if ([segue.identifier isEqualToString:@"segueForCarInfo"]) {
+        CarInfoViewController* destVC = segue.destinationViewController;
+        
+        CarCell* selectedCell = sender;
+        NSIndexPath* selectedIndexPath = [self.tableView indexPathForCell: selectedCell];
+        destVC.selectedCarModel = self.carList[selectedIndexPath.row];
+    }
 }
-*/
+
+
 
 @end

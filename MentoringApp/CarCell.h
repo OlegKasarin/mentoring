@@ -10,6 +10,4 @@
 
 @interface CarCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *carLabel;
-@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @end

@@ -10,8 +10,4 @@
 
 @interface NewVC : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *currentOrientationLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentCountOfRotationsLabel;
-
-
 @end

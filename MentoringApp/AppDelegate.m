@@ -9,13 +9,13 @@
 #import "AppDelegate.h"
 #import "CarFactory.h"
 #import "CarModel.h"
+#import "CarsTableViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     CarFactory* hondaFactory = [CarFactory factoryWithName:@"Honda Manufacturing JA LTD."];
@@ -72,6 +72,17 @@
 
     [hondaFactory produceCar:accord9 inCount:500] ? NSLog(@"Produced %@.", accord9) : NSLog(@"did not produced");
     [hondaFactory producedList];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CarsTableViewController *tableVC = [storyboard instantiateViewControllerWithIdentifier:@"CarsTableViewController"];
+    tableVC.carList = [hondaFactory models];
+    //self.window.rootViewController = tableVC;
+    UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    self.window.rootViewController = navVC;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
