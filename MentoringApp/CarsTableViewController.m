@@ -9,6 +9,7 @@
 #import "CarsTableViewController.h"
 #import "CarCell.h"
 #import "CarInfoViewController.h"
+#import "NewCarViewController.h"
 #import "CarModel.h"
 
 @interface CarsTableViewController ()
@@ -31,6 +32,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)addNewModel:(UIBarButtonItem *)sender {
+    NewCarViewController* newCarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewCarViewController"];
+    newCarVC.delegate = self;
+    [self.navigationController pushViewController:newCarVC animated:YES];
+}
+
 
 #pragma mark - Table view data source
 
@@ -57,8 +65,14 @@
     [self.navigationController pushViewController:carInfoVC animated:YES];
 }
 
+- (void)addNewCarModelViewController:(NewCarViewController *)controller didFinishEnteringItem:(CarModel *)newCarModel {
+    NSLog(@"%@", newCarModel);
+    self.carList = [self.carList arrayByAddingObject:newCarModel];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Navigation
- 
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender NS_AVAILABLE_IOS(5_0) {
     if ([segue.identifier isEqualToString:@"segueForCarInfo"]) {
         CarInfoViewController* destVC = segue.destinationViewController;
@@ -68,7 +82,7 @@
         destVC.selectedCarModel = self.carList[selectedIndexPath.row];
     }
 }
-
+*/
 
 
 @end

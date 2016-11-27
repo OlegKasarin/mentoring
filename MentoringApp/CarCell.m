@@ -9,7 +9,7 @@
 #import "CarCell.h"
 
 @interface CarCell ()
-@property (weak, nonatomic) IBOutlet UILabel *carLabel;
+//@property (weak, nonatomic, nullable) IBOutlet UILabel *carLabel;
 @end
 
 @implementation CarCell

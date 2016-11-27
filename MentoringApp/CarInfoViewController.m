@@ -22,8 +22,8 @@
     [super viewDidLoad];
     //if ([self isViewLoaded]) {
         self.titleLabel.text = [NSString stringWithFormat:@"%@", self.selectedCarModel];
-        self.subTitle1.text = [NSString stringWithFormat:@"Since: %@", self.selectedCarModel.startMonufacturingDate ? : @"now"];
-        self.subTitle2.text = [NSString stringWithFormat:@"Till: %@", self.selectedCarModel.endMonufacturingDate ? : @"n/a"];
+        self.subTitle1.text = [NSString stringWithFormat:@"Since: %@", self.selectedCarModel.startManufacturingDate ? : @"now"];
+        self.subTitle2.text = [NSString stringWithFormat:@"Till: %@", self.selectedCarModel.endManufacturingDate ? : @"n/a"];
         self.subTitle3.text = [NSString stringWithFormat:@"%ld generation", self.selectedCarModel.generationNumber];
         self.bottomLabel.text = [NSString stringWithFormat:@"SerialNumber:%@", self.selectedCarModel.serialNumber];
     //}

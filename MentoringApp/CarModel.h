@@ -18,8 +18,8 @@ typedef NS_ENUM(NSInteger, CarBrand) {
 NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) CarBrand brand; // Honda
 @property (copy, readonly, nonatomic) NSString* modelName; // Accord Civic
-@property (nonatomic, nullable) NSDate* startMonufacturingDate;
-@property (nonatomic, nullable) NSDate* endMonufacturingDate;
+@property (nonatomic, nullable) NSDate* startManufacturingDate;
+@property (nonatomic, nullable) NSDate* endManufacturingDate;
 @property (assign, nonatomic) NSInteger generationNumber; // 1 2 3
 @property (copy, nonatomic) NSString* serialNumber; // WVWZZZ16ZEW563899
 

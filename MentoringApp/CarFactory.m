@@ -48,11 +48,11 @@ NO - список выпускаемых моделей
     NSArray* archivedModels = [NSArray array];
     NSArray* monufacturingModels = [NSArray array];
     for (CarModel* currentModel in self.models) {
-        if ([currentModel.endMonufacturingDate compare:[NSDate date]] == NSOrderedAscending) {
+        if ([currentModel.endManufacturingDate compare:[NSDate date]] == NSOrderedAscending) {
             archivedModels = [archivedModels arrayByAddingObject:currentModel];
         }
         else
-            if ([currentModel.startMonufacturingDate compare:[NSDate date]] == NSOrderedAscending && (!currentModel.endMonufacturingDate || [currentModel.endMonufacturingDate compare:[NSDate date]] == NSOrderedDescending)) {
+            if ([currentModel.startManufacturingDate compare:[NSDate date]] == NSOrderedAscending && (!currentModel.endManufacturingDate || [currentModel.endManufacturingDate compare:[NSDate date]] == NSOrderedDescending)) {
             monufacturingModels = [monufacturingModels arrayByAddingObject:currentModel];
             }
     }
@@ -103,11 +103,11 @@ NO - список выпускаемых моделей
 - (nonnull NSDate*)dateOfLastArchivedModel: (nonnull CarModel*)model {
     CarModel* lastArchivedModel;
     for (CarModel* currentModel in [self listOfGenerationForCurrentModelName:model]) {
-        if (currentModel.endMonufacturingDate && ([lastArchivedModel.endMonufacturingDate compare:currentModel.endMonufacturingDate] == NSOrderedAscending)) {
+        if (currentModel.endManufacturingDate && ([lastArchivedModel.endManufacturingDate compare:currentModel.endManufacturingDate] == NSOrderedAscending)) {
             lastArchivedModel = currentModel;
         }
     }
-    return lastArchivedModel.endMonufacturingDate;
+    return lastArchivedModel.endManufacturingDate;
 }
 // количество выпущенных версий по модели снятой с производства
 - (nonnull NSNumber*)countOfArchivedModels: (nonnull CarModel*)model {

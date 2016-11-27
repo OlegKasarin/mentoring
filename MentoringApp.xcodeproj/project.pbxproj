@@ -17,6 +17,7 @@
 		180C340A1D54BAA00035F050 /* CarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180C34091D54BAA00035F050 /* CarModel.m */; };
 		18322F7F1DDB7807007C8B79 /* CarInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18322F7E1DDB7807007C8B79 /* CarInfoViewController.m */; };
 		18322F821DDE199E007C8B79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18322F801DDE199E007C8B79 /* Main.storyboard */; };
+		18322F881DE1A72F007C8B79 /* NewCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18322F871DE1A72F007C8B79 /* NewCarViewController.m */; };
 		1835ADCB1DAAAD0A0014A84A /* TableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835ADCA1DAAAD0A0014A84A /* TableVC.m */; };
 		1835ADCE1DAABA200014A84A /* OrangeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835ADCD1DAABA200014A84A /* OrangeVC.m */; };
 		1835ADD21DABBDC80014A84A /* XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835ADD01DABBDC80014A84A /* XibViewController.m */; };
@@ -52,6 +53,8 @@
 		18322F7D1DDB7806007C8B79 /* CarInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoViewController.h; sourceTree = "<group>"; };
 		18322F7E1DDB7807007C8B79 /* CarInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoViewController.m; sourceTree = "<group>"; };
 		18322F811DDE199E007C8B79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18322F861DE1A72F007C8B79 /* NewCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewCarViewController.h; sourceTree = "<group>"; };
+		18322F871DE1A72F007C8B79 /* NewCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewCarViewController.m; sourceTree = "<group>"; };
 		1835ADC91DAAAD0A0014A84A /* TableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableVC.h; sourceTree = "<group>"; };
 		1835ADCA1DAAAD0A0014A84A /* TableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableVC.m; sourceTree = "<group>"; };
 		1835ADCC1DAABA200014A84A /* OrangeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrangeVC.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				18322F7E1DDB7807007C8B79 /* CarInfoViewController.m */,
 				18BF8BEC1DC9198900BE6A19 /* CarCell.h */,
 				18BF8BED1DC9198900BE6A19 /* CarCell.m */,
+				18322F861DE1A72F007C8B79 /* NewCarViewController.h */,
+				18322F871DE1A72F007C8B79 /* NewCarViewController.m */,
 				180C33F61D54A4A50035F050 /* Assets.xcassets */,
 				180C33F81D54A4A50035F050 /* LaunchScreen.storyboard */,
 				180C33FB1D54A4A50035F050 /* Info.plist */,
@@ -324,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18322F881DE1A72F007C8B79 /* NewCarViewController.m in Sources */,
 				1835ADD21DABBDC80014A84A /* XibViewController.m in Sources */,
 				18AB79931D984C4E0018E471 /* SecondViewController.m in Sources */,
 				180C34071D54BA790035F050 /* Car.m in Sources */,

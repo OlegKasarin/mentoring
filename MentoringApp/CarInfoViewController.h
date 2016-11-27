@@ -10,5 +10,5 @@
 #import "CarModel.h"
 
 @interface CarInfoViewController : UIViewController
-@property (nonatomic, nullable) CarModel* selectedCarModel;
+@property (nonatomic, nonnull) CarModel* selectedCarModel;
 @end

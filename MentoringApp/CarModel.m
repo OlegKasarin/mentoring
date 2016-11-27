@@ -31,8 +31,8 @@
     if (self) {
         _brand = brand;
         _modelName = modelName;
-        _startMonufacturingDate = startDate;
-        _endMonufacturingDate = endDate;
+        _startManufacturingDate = startDate;
+        _endManufacturingDate = endDate;
         _generationNumber = generationNumber;
         _serialNumber = serialNumber;
     }

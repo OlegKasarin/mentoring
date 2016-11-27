@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewCarViewController.h"
 
 @class CarModel;
 
-@interface CarsTableViewController : UITableViewController
+@interface CarsTableViewController : UITableViewController <NewCarViewControllerDelegate>
 @property (copy, nonatomic, nullable) NSArray <CarModel*> *carList;
 @end
