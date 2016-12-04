@@ -30,7 +30,6 @@
 		18BF8BE11DBBE11400BE6A19 /* TheLastVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF8BE01DBBE11400BE6A19 /* TheLastVC.m */; };
 		18BF8BE81DC4D56000BE6A19 /* NewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF8BE71DC4D56000BE6A19 /* NewVC.m */; };
 		18BF8BEB1DC9125A00BE6A19 /* CarsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF8BEA1DC9125A00BE6A19 /* CarsTableViewController.m */; };
-		18BF8BEE1DC9198900BE6A19 /* CarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BF8BED1DC9198900BE6A19 /* CarCell.m */; };
 		41C17CFFADC8B38A678E7F3F /* libPods-MentoringApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D37F82C9C95635C0590964 /* libPods-MentoringApp.a */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +77,6 @@
 		18BF8BE71DC4D56000BE6A19 /* NewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVC.m; sourceTree = "<group>"; };
 		18BF8BE91DC9125A00BE6A19 /* CarsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarsTableViewController.h; sourceTree = "<group>"; };
 		18BF8BEA1DC9125A00BE6A19 /* CarsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarsTableViewController.m; sourceTree = "<group>"; };
-		18BF8BEC1DC9198900BE6A19 /* CarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarCell.h; sourceTree = "<group>"; };
-		18BF8BED1DC9198900BE6A19 /* CarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarCell.m; sourceTree = "<group>"; };
 		9C8CFBC176446E8F207C49B2 /* Pods-MentoringApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentoringApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MentoringApp/Pods-MentoringApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B8D37F82C9C95635C0590964 /* libPods-MentoringApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MentoringApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4E7DDD1367EC1E102073F5 /* Pods-MentoringApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MentoringApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MentoringApp/Pods-MentoringApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,8 +126,6 @@
 				18BF8BEA1DC9125A00BE6A19 /* CarsTableViewController.m */,
 				18322F7D1DDB7806007C8B79 /* CarInfoViewController.h */,
 				18322F7E1DDB7807007C8B79 /* CarInfoViewController.m */,
-				18BF8BEC1DC9198900BE6A19 /* CarCell.h */,
-				18BF8BED1DC9198900BE6A19 /* CarCell.m */,
 				18322F861DE1A72F007C8B79 /* NewCarViewController.h */,
 				18322F871DE1A72F007C8B79 /* NewCarViewController.m */,
 				180C33F61D54A4A50035F050 /* Assets.xcassets */,
@@ -241,6 +236,7 @@
 				TargetAttributes = {
 					180C33E61D54A4A50035F050 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2HYYM7E388;
 					};
 				};
 			};
@@ -345,7 +341,6 @@
 				18322F7F1DDB7807007C8B79 /* CarInfoViewController.m in Sources */,
 				18AB79991DA17FDA0018E471 /* NavigationController.m in Sources */,
 				180C33EC1D54A4A50035F050 /* main.m in Sources */,
-				18BF8BEE1DC9198900BE6A19 /* CarCell.m in Sources */,
 				18BF8BEB1DC9125A00BE6A19 /* CarsTableViewController.m in Sources */,
 				18AB799C1DA422810018E471 /* TabBarVC.m in Sources */,
 				1835ADCB1DAAAD0A0014A84A /* TableVC.m in Sources */,
@@ -467,6 +462,7 @@
 			baseConfigurationReference = 9C8CFBC176446E8F207C49B2 /* Pods-MentoringApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HYYM7E388;
 				INFOPLIST_FILE = MentoringApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OK.MentoringApp;
@@ -480,6 +476,7 @@
 			baseConfigurationReference = DE4E7DDD1367EC1E102073F5 /* Pods-MentoringApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2HYYM7E388;
 				INFOPLIST_FILE = MentoringApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OK.MentoringApp;

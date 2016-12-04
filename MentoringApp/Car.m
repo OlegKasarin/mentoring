@@ -24,4 +24,24 @@
     return self;
 }
 
+#pragma mark - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super init];
+    if (self) {
+        _color = [coder decodeObjectForKey:@"color"];
+        _engineVersion = [coder decodeObjectForKey:@"engineVersion"];
+        _transmissionVersion = [coder decodeObjectForKey:@"transmissionVersion"];
+        _hp = [coder decodeFloatForKey:@"hp"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.color forKey:@"color"];
+    [aCoder encodeObject:self.engineVersion forKey:@"engineVersion"];
+    [aCoder encodeObject:self.transmissionVersion forKey:@"transmissionVersion"];
+    [aCoder encodeFloat:self.hp forKey:@"hp"];
+}
 @end

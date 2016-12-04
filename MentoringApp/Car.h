@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface Car : NSObject
+@interface Car : NSObject <NSCoding>
 NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) UIColor* color;
 @property (copy, readonly, nonatomic, nullable) NSString* engineVersion;

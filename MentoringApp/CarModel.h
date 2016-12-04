@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Car.h"
 
-@interface CarModel : Car
+@interface CarModel : Car <NSCoding>
 
 //список автомобильных брендов
 typedef NS_ENUM(NSInteger, CarBrand) {
@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) NSDate* endManufacturingDate;
 @property (assign, nonatomic) NSInteger generationNumber; // 1 2 3
 @property (copy, nonatomic) NSString* serialNumber; // WVWZZZ16ZEW563899
+@property (nullable, nonatomic) UIImage* modelImage;
 
 #pragma mark - Car Model Initialization
 

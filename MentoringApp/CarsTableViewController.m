@@ -7,14 +7,14 @@
 //
 
 #import "CarsTableViewController.h"
-#import "CarCell.h"
 #import "CarInfoViewController.h"
 #import "NewCarViewController.h"
 #import "CarModel.h"
 
 @interface CarsTableViewController ()
-
 @end
+
+static NSString* kCarList = @"carList";
 
 @implementation CarsTableViewController
 
@@ -26,12 +26,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self loadCarList];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Add a new model
 
 - (IBAction)addNewModel:(UIBarButtonItem *)sender {
     NewCarViewController* newCarVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewCarViewController"];
@@ -39,6 +41,22 @@
     [self.navigationController pushViewController:newCarVC animated:YES];
 }
 
+#pragma mark - Save and Load
+
+-(void)saveCarList {
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* dataSave = [NSKeyedArchiver archivedDataWithRootObject:self.carList];
+    [userDefaults setObject:dataSave forKey:kCarList];
+    [userDefaults synchronize];
+}
+
+- (void)loadCarList {
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData* data = [userDefaults objectForKey:kCarList];
+    if (data) {
+        self.carList = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+}
 
 #pragma mark - Table view data source
 
@@ -50,9 +68,9 @@
     return [self.carList count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CarCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CarCell" forIndexPath:indexPath];
+    //CarCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CarCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] init];
     cell.textLabel.text = [NSString stringWithFormat:@"%@", self.carList[indexPath.row]];
     return cell;
 }
@@ -66,9 +84,10 @@
 }
 
 - (void)addNewCarModelViewController:(NewCarViewController *)controller didFinishEnteringItem:(CarModel *)newCarModel {
-    NSLog(@"%@", newCarModel);
+    NSLog(@"New model '%@' is added", newCarModel);
     self.carList = [self.carList arrayByAddingObject:newCarModel];
     [self.tableView reloadData];
+    [self saveCarList];
 }
 
 #pragma mark - Navigation
@@ -83,6 +102,5 @@
     }
 }
 */
-
 
 @end

@@ -43,6 +43,33 @@
     return [self initWithBrand:Honda modelName:modelName startManufacturingDate:nil endManufacturingDate:nil generationNumber:0 andSerialNumber:[self randomSerialNumber]];
 }
 
+#pragma mark - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        _brand = [coder decodeIntegerForKey:@"brand"];
+        _modelName = [coder decodeObjectForKey:@"modelName"];
+        _startManufacturingDate = [coder decodeObjectForKey:@"startManufacturingDate"];
+        _endManufacturingDate = [coder decodeObjectForKey:@"endManufacturingDate"];
+        _generationNumber = [coder decodeIntegerForKey:@"generationNumber"];
+        _serialNumber = [coder decodeObjectForKey:@"serialNumber"];
+        _modelImage = [coder decodeObjectForKey:@"modelImage"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeInteger:self.brand forKey:@"brand"];
+    [aCoder encodeObject:self.modelName forKey:@"modelName"];
+    [aCoder encodeObject:self.startManufacturingDate forKey:@"startManufacturingDate"];
+    [aCoder encodeObject:self.endManufacturingDate forKey:@"endManufacturingDate"];
+    [aCoder encodeInteger:self.generationNumber forKey:@"generationNumber"];
+    [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
+    [aCoder encodeObject:self.modelImage forKey:@"modelImage"];
+}
+
 #pragma mark -
 
 - (BOOL)isEqualToModel:(nonnull CarModel*)carModel {

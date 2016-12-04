@@ -11,16 +11,13 @@
 
 @class NewCarViewController;
 
-@protocol NewCarViewControllerDelegate <NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@protocol NewCarViewControllerDelegate <NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 - (void)addNewCarModelViewController:(nonnull NewCarViewController *)controller didFinishEnteringItem:(nonnull CarModel *)newCarModel;
 @end
 
 @interface NewCarViewController : UITableViewController
 @property (nullable, nonatomic, weak) id <NewCarViewControllerDelegate> delegate;
 @end
-
-
-
 
 //uiImagePicker
 //how to save pic

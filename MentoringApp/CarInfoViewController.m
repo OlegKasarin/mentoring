@@ -14,19 +14,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *subTitle2;
 @property (weak, nonatomic) IBOutlet UILabel *subTitle3;
 @property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *modelImageView;
 @end
 
 @implementation CarInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //if ([self isViewLoaded]) {
-        self.titleLabel.text = [NSString stringWithFormat:@"%@", self.selectedCarModel];
-        self.subTitle1.text = [NSString stringWithFormat:@"Since: %@", self.selectedCarModel.startManufacturingDate ? : @"now"];
-        self.subTitle2.text = [NSString stringWithFormat:@"Till: %@", self.selectedCarModel.endManufacturingDate ? : @"n/a"];
-        self.subTitle3.text = [NSString stringWithFormat:@"%ld generation", self.selectedCarModel.generationNumber];
-        self.bottomLabel.text = [NSString stringWithFormat:@"SerialNumber:%@", self.selectedCarModel.serialNumber];
-    //}
+    self.titleLabel.text = [NSString stringWithFormat:@"%@", self.selectedCarModel];
+    self.subTitle1.text = [NSString stringWithFormat:@"Since: %@", self.selectedCarModel.startManufacturingDate ? : @"now"];
+    self.subTitle2.text = [NSString stringWithFormat:@"Till   : %@", self.selectedCarModel.endManufacturingDate ? : @"n/a"];
+    self.subTitle3.text = [NSString stringWithFormat:@"%ld generation", (long)self.selectedCarModel.generationNumber];
+    self.bottomLabel.text = [NSString stringWithFormat:@"Serial num: %@", self.selectedCarModel.serialNumber];
+    self.modelImageView.image = self.selectedCarModel.modelImage;
 }
 
 - (void)didReceiveMemoryWarning {
